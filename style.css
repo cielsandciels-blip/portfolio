@@ -65,3 +65,47 @@ footer {
     padding: 40px;
     color: #718096;
 }
+
+/* スライダー全体の枠 */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden; /* はみ出た画像を隠す */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* スライド画像の設定 */
+.slide {
+    display: none; /* 基本は全部隠す */
+    width: 100%;
+    height: auto;
+}
+
+/* 「active」クラスがついている画像だけ表示する */
+.slide.active {
+    display: block;
+}
+
+/* 前後ボタンの共通スタイル */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}

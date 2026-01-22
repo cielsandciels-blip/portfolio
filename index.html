@@ -19,9 +19,17 @@
     </section>
 
     <div class="project">
-    <h3>AI Web 戦略コンサルタント</h3>
-    <img src="img/app-shot.png" alt="AIアプリの画面" style="width: 100%; border-radius: 8px; margin-bottom: 15px;">
+   <h3>AI Web 戦略コンサルタント</h3>
     
+    <div class="slider-container">
+        <div class="slider">
+            <img src="img/shot1.png" class="slide active" alt="ログイン画面">
+            <img src="img/shot2.png" class="slide" alt="診断入力画面">
+            <img src="img/shot3.png" class="slide" alt="診断結果画面">
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
     <p>Gemini APIとFlaskを使用した、中小企業向けの診断ツール。
        ユーザー認証機能を搭載し、セキュリティにも配慮しています。</p>
     <a href="https://github.com/cielsandciels-blip/local-biz-ai-consultant" target="_blank">GitHubでコードを見る</a>
@@ -30,5 +38,6 @@
     <footer>
         <p>&copy; 2026 KOUKI. All Rights Reserved.</p>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
