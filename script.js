@@ -1,20 +1,22 @@
 function moveSlide(step, btn) {
-    // 1. クリックされたボタンの親である「slider-container」を特定する
+    // 1. クリックされたボタンの「親の箱（slider-container）」を見つける
     const container = btn.closest('.slider-container');
     
-    // 2. そのコンテナの中にあるスライドだけを取得する
+    // 2. その箱の中にある画像だけを取得する（これで他のプロジェクトと混ざらない！）
     const slides = container.querySelectorAll('.slide');
     
-    // 3. 現在 active がついているスライドとその番号を探す
+    // 3. その箱の中で現在表示されている画像(active)を探す
     let currentActive = container.querySelector('.slide.active');
+    
+    // 4. その画像が「箱の中のスライドリスト」の何番目か調べる
     let currentIndex = Array.from(slides).indexOf(currentActive);
     
-    // 4. 今の「active」を消す
+    // 5. 今の active を消す
     slides[currentIndex].classList.remove('active');
     
-    // 5. 次の番号を計算（ここは元のロジックを継承！）
+    // 6. 次の番号を計算（箱の中のスライド枚数でループさせる）
     currentIndex = (currentIndex + step + slides.length) % slides.length;
     
-    // 6. 新しい番号に「active」をつける
+    // 7. その箱の中の新しい画像に active をつける
     slides[currentIndex].classList.add('active');
 }
