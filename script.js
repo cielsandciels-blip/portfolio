@@ -1,14 +1,20 @@
-let currentSlide = 0;
-
-function moveSlide(step) {
-    const slides = document.querySelectorAll('.slide');
+function moveSlide(step, btn) {
+    // 1. クリックされたボタンの親である「slider-container」を特定する
+    const container = btn.closest('.slider-container');
     
-    // 今の「active」を消す
-    slides[currentSlide].classList.remove('active');
+    // 2. そのコンテナの中にあるスライドだけを取得する
+    const slides = container.querySelectorAll('.slide');
     
-    // 次の番号を計算する（最後の次は最初に戻る）
-    currentSlide = (currentSlide + step + slides.length) % slides.length;
+    // 3. 現在 active がついているスライドとその番号を探す
+    let currentActive = container.querySelector('.slide.active');
+    let currentIndex = Array.from(slides).indexOf(currentActive);
     
-    // 新しい番号に「active」をつける
-    slides[currentSlide].classList.add('active');
+    // 4. 今の「active」を消す
+    slides[currentIndex].classList.remove('active');
+    
+    // 5. 次の番号を計算（ここは元のロジックを継承！）
+    currentIndex = (currentIndex + step + slides.length) % slides.length;
+    
+    // 6. 新しい番号に「active」をつける
+    slides[currentIndex].classList.add('active');
 }

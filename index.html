@@ -29,8 +29,8 @@
             <img src="img/shot2.png" class="slide" alt="診断入力画面">
             <img src="img/shot3.png" class="slide" alt="診断結果画面">
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
     </div>
    <div class="project-detail">
         <p><strong>【概要】</strong> ウェブ解析士の知見と生成AIを融合させた、中小企業向けのWeb戦略立案支援ツールです。</p>
@@ -39,13 +39,39 @@
     </div>
     <a href="https://github.com/cielsandciels-blip/local-biz-ai-consultant" target="_blank">GitHubでコードを見る</a>
 </div>
+<div class="project">
+    <h3>医療現場のミスを防ぐ在庫管理システム</h3>
+    
+    <div class="slider-container">
+        <div class="slider">
+            <img src="img/medical-shot1.png" class="slide active" alt="在庫一覧とアラート機能">
+            <img src="img/medical-shot2.png" class="slide" alt="入出庫履歴（監査証跡）">
+            <img src="img/medical-shot3.png" class="slide" alt="バリデーションエラー画面">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
+    </div>
+
+    <div class="project-detail">
+        <p><strong>【概要】</strong> 医療現場での「正確な在庫管理」と「操作の透明性」を追求した業務管理ツールです。</p>
+        <p><strong>【技術スタック】</strong> Python, Flask, SQLite, Flask-Login, Gunicorn</p>
+        <p><strong>【注力ポイント】</strong> 
+            単なる数値管理ではなく、医療現場で不可欠な「監査証跡（操作ログ）」の自動記録機能を実装。
+            「廃棄」や「使用」などの理由に応じて在庫変動を自動計算するロジックや、在庫不足時の動的アラートなど、実務での誤操作防止に徹底的にこだわりました。
+        </p>
+    </div>
+    
+    <div class="project-links">
+        <a href="https://github.com/cielsandciels-blip/medical-inventory" target="_blank" class="link-btn">GitHubでコードを見る</a>
+        <a href="https://medical-inventory-koki.onrender.com" target="_blank" class="link-btn demo-btn">デモサイトを開く</a>
+    </div>
+</div>
 <section id="skills">
     <h2>Skills & Qualifications</h2>
     <ul>
         <li><strong>資格:</strong> ウェブ解析士, 普通自動車第一種運転免許(AT限定)</li>
         <li><strong>言語/Framework:</strong> Python (Flask), JavaScript, HTML5, CSS3</li>
-        <li><strong>AI/DB:</strong> Gemini API, SQLite</li>
-        <li><strong>その他スキル:</strong> GA4, Filmora, Capcat, Adobe(Illustrator,Photoshop,XD)</li>
+        <li><strong>AI/DB/Server:</strong> Gemini API, SQLite, Gunicorn, Render (CI/CD)</li> <li><strong>その他スキル:</strong> GA4, Filmora, Capcut, Adobe (Illustrator, Photoshop, XD)</li>
     </ul>
 </section>
 
