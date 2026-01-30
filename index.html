@@ -66,6 +66,37 @@
         <a href="https://medical-inventory-koki.onrender.com" target="_blank" class="link-btn demo-btn">デモサイトを開く</a>
     </div>
 </div>
+<div class="project">
+    <h3>Secure AI Gateway（生成AI情報漏洩防止システム）</h3>
+    
+    <div class="slider-container">
+        <div class="slider">
+            <img src="img/gateway1.png" class="slide active" alt="セキュリティ遮断画面">
+            <img src="img/gateway2.png" class="slide" alt="管理ダッシュボード">
+            <img src="img/gateway3.png" class="slide" alt="検知ログ詳細">
+        </div>
+        <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
+    </div>
+
+    <div class="project-detail">
+        <p><strong>【概要】</strong> 企業での生成AI利用における「情報漏洩」を防ぐための、中間プロキシシステムです。社員とAIの間に配置し、送信内容をリアルタイムで検閲します。</p>
+        <p><strong>【技術スタック】</strong> Go (net/http), Vanilla JS, Chart.js, HTML/CSS</p>
+        <p><strong>【注力ポイント】</strong> 
+            DLP（情報漏洩対策）として、正規表現を用いた「APIキー」「メールアドレス」「個人情報」のパターン検知を実装。
+            また、Go言語を採用することで、将来的なアクセス増にも耐えうる高速なレスポンスを実現しました。
+            管理画面ではChart.jsを用い、リスク検知状況をリアルタイムで可視化しています。
+        </p>
+        <p><strong>【現状の課題と展望】</strong>
+            現在は正規表現によるパターンマッチングを採用しているため、高度な難読化が行われたコードや、文脈依存の機密情報の検知には限界があります。
+            本質的な解決のためには、今後は「抽象構文木（AST）解析」の導入や、外部ポリシーエンジン（OPA）との連携による動的なルール管理の実装が必要であると考えています。
+        </p>
+    </div>
+    
+    <div class="project-links">
+        <a href="https://github.com/cielsandciels-blip/secure-ai-gateway" target="_blank" class="link-btn">GitHubでコードを見る</a>
+        </div>
+</div>
 <section id="skills">
     <h2>Skills & Qualifications</h2>
     <ul>
