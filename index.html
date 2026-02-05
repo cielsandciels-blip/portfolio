@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>KOUKI's Portfolio</h1>
-        <p>ウェブ解析士 × AI開発者（Python）</p>
+        <p>ウェブ解析士 × AI開発者（Python/Go）</p>
     </header>
 
     <section id="profile">
@@ -20,103 +20,143 @@
     </section>
 
     <section id="work">
-    <div class="project">
-   <h3>AI Web 戦略コンサルタント</h3>
-    
-    <div class="slider-container">
-        <div class="slider">
-            <img src="img/shot1.png" class="slide active" alt="ログイン画面">
-            <img src="img/shot2.png" class="slide" alt="診断入力画面">
-            <img src="img/shot3.png" class="slide" alt="診断結果画面">
-        </div>
-        <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
-    </div>
-   <div class="project-detail">
-        <p><strong>【概要】</strong> ウェブ解析士の知見と生成AIを融合させた、中小企業向けのWeb戦略立案支援ツールです。</p>
-        <p><strong>【技術スタック】</strong> Python, Flask, Google Gemini API, SQLite, HTML/CSS</p>
-        <p><strong>【注力ポイント】</strong> 単なるAI連携に留まらず、Flask-Loginによるユーザー認証やハッシュ化によるパスワード保護、SQLiteを用いた診断履歴の永続化など、実務を想定したセキュリティとデータ管理を実装しました。</p>
-    </div>
-    <a href="https://github.com/cielsandciels-blip/local-biz-ai-consultant" target="_blank">GitHubでコードを見る</a>
-</div>
-<div class="project">
-    <h3>医療現場のミスを防ぐ在庫管理システム</h3>
-    
-    <div class="slider-container">
-        <div class="slider">
-            <img src="img/medical-shot1.png" class="slide active" alt="在庫一覧とアラート機能">
-            <img src="img/medical-shot2.png" class="slide" alt="入出庫履歴（監査証跡）">
-            <img src="img/medical-shot3.png" class="slide" alt="バリデーションエラー画面">
-        </div>
-        <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
-    </div>
+        <div class="project">
+            <h3>AI自動シフト作成システム「Smart Shift Scheduler」</h3>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="img/shift1.png" class="slide active" alt="管理ダッシュボードとカレンダー">
+                    <img src="img/shift2(1).png" class="slide" alt="ドラック&ドロップ">
+                    <img src="img/shift2.png" class="slide" alt="生成ルール設定画面">
+                    <img src="img/shift3.png" class="slide" alt="AI計算中のローディング">
+                    <img src="img/shift4.png" class="slide" alt="CSV出力と人件費シミュレーション">
+                </div>
+                <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
+            </div>
 
-    <div class="project-detail">
-        <p><strong>【概要】</strong> 医療現場での「正確な在庫管理」と「操作の透明性」を追求した業務管理ツールです。</p>
-        <p><strong>【技術スタック】</strong> Python, Flask, SQLite, Flask-Login, Gunicorn</p>
-        <p><strong>【注力ポイント】</strong> 
-            単なる数値管理ではなく、医療現場で不可欠な「監査証跡（操作ログ）」の自動記録機能を実装。
-            「廃棄」や「使用」などの理由に応じて在庫変動を自動計算するロジックや、在庫不足時の動的アラートなど、実務での誤操作防止に徹底的にこだわりました。
-        </p>
-    </div>
-    
-    <div class="project-links">
-        <a href="https://github.com/cielsandciels-blip/medical-inventory" target="_blank" class="link-btn">GitHubでコードを見る</a>
-        <a href="https://medical-inventory-koki.onrender.com" target="_blank" class="link-btn demo-btn">デモサイトを開く</a>
-    </div>
-</div>
-<div class="project">
-    <h3>Secure AI Gateway（生成AI情報漏洩防止システム）</h3>
-    
-    <div class="slider-container">
-        <div class="slider">
-            <img src="img/gateway1.png" class="slide active" alt="セキュリティ遮断画面">
-            <img src="img/gateway2.png" class="slide" alt="管理ダッシュボード">
-            <img src="img/gateway3.png" class="slide" alt="検知ログ詳細">
+            <div class="project-detail">
+                <p><strong>【概要】</strong> 従業員の「希望休」や「連勤制限（労務コンプライアンス）」、さらに「日ごとの必要人数」など、複雑に絡み合う条件をすべて満たしたシフト表をワンクリックで生成するWebアプリです。これまで店長の経験と勘に頼っていた調整業務を、数理最適化アルゴリズムによって自動化・標準化しました。</p>
+                <p><strong>【技術スタック】</strong> 
+                    Backend: Go (Gin) / AI Engine: Python (OR-Tools) / Infra: Docker / DB: PostgreSQL(Render)
+                </p>
+                <p><strong>【注力ポイント】</strong> 
+                    現場での運用を第一に考え、生成されたシフトはカレンダー上でドラッグ＆ドロップするだけで直感的に修正可能にしました。
+                    実用性を最優先し、「最大5連勤まで」や「土日は最低3人」といった複雑な制約条件をGUIから柔軟に設定できるルールエンジンを実装しました。
+                    また、AI計算中は非同期でローディングを表示し、計算完了後は即座にCSV（Excel対応）で出力可能にするなど、現場での運用フローを意識したUX設計を行いました。
+                </p>
+                <p><strong>【開発における課題と解決策】</strong>
+                    Go（Webサーバー）とPython（計算エンジン）の連携アーキテクチャが課題でした。
+                    今回はDockerを用いたコンテナ環境を構築し、GoからPythonプロセスへJSON経由で計算モデルを渡すパイプラインを構築することで、高速なレスポンスと高度な計算能力の両立を実現しました。
+                </p>
+            </div>
+            <div class="project-links">
+                <a href="https://github.com/cielsandciels-blip/smart-shift-scheduler" target="_blank" class="link-btn">GitHubでコードを見る</a>
+            </div>
         </div>
-        <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
-    </div>
 
-    <div class="project-detail">
-        <p><strong>【概要】</strong> 企業での生成AI利用における「情報漏洩」を防ぐための、中間プロキシシステムです。社員とAIの間に配置し、送信内容をリアルタイムで検閲します。</p>
-        <p><strong>【技術スタック】</strong> Go (net/http), Vanilla JS, Chart.js, HTML/CSS</p>
-        <p><strong>【注力ポイント】</strong> 
-            DLP（情報漏洩対策）として、正規表現を用いた「APIキー」「メールアドレス」「個人情報」のパターン検知を実装。
-            また、Go言語を採用することで、将来的なアクセス増にも耐えうる高速なレスポンスを実現しました。
-            管理画面ではChart.jsを用い、リスク検知状況をリアルタイムで可視化しています。
-        </p>
-        <p><strong>【現状の課題と展望】</strong>
-            現在は正規表現によるパターンマッチングを採用しているため、高度な難読化が行われたコードや、文脈依存の機密情報の検知には限界があります。
-            本質的な解決のためには、今後は「抽象構文木（AST）解析」の導入や、外部ポリシーエンジン（OPA）との連携による動的なルール管理の実装が必要であると考えています。
-        </p>
-    </div>
-    
-    <div class="project-links">
-        <a href="https://github.com/cielsandciels-blip/secure-ai-gateway" target="_blank" class="link-btn">GitHubでコードを見る</a>
+        <div class="project">
+            <h3>AI Web 戦略コンサルタント</h3>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="img/shot1.png" class="slide active" alt="ログイン画面">
+                    <img src="img/shot2.png" class="slide" alt="診断入力画面">
+                    <img src="img/shot3.png" class="slide" alt="診断結果画面">
+                </div>
+                <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
+            </div>
+            <div class="project-detail">
+                <p><strong>【概要】</strong> ウェブ解析士の知見と生成AIを融合させた、中小企業向けのWeb戦略立案支援ツールです。</p>
+                <p><strong>【技術スタック】</strong> Python, Flask, Google Gemini API, SQLite, HTML/CSS</p>
+                <p><strong>【注力ポイント】</strong> 単なるAI連携に留まらず、Flask-Loginによるユーザー認証やハッシュ化によるパスワード保護、SQLiteを用いた診断履歴の永続化など、実務を想定したセキュリティとデータ管理を実装しました。</p>
+            </div>
+            <a href="https://github.com/cielsandciels-blip/local-biz-ai-consultant" target="_blank">GitHubでコードを見る</a>
         </div>
-</div>
-<section id="skills">
-    <h2>Skills & Qualifications</h2>
-    <ul>
-        <li><strong>資格:</strong> ウェブ解析士, 普通自動車第一種運転免許(AT限定)</li>
-        <li><strong>言語/Framework:</strong> Python (Flask), JavaScript, HTML5, CSS3</li>
-        <li><strong>AI/DB/Server:</strong> Gemini API, SQLite, Gunicorn, Render (CI/CD)</li> <li><strong>その他スキル:</strong> GA4, Filmora, Capcut, Adobe (Illustrator, Photoshop, XD)</li>
-    </ul>
-</section>
 
-<section id="vision">
-    <h2>Vision</h2>
-    <p>ウェブ解析士の視点とエンジニアリングを融合させ、地方ビジネスにDX（デジタルトランスフォーメーション）を。実務未経験ながら、課題発見から実装までを一貫して行う『自走力』が私の強みです。</p>
-</section>
+        <div class="project">
+            <h3>医療現場のミスを防ぐ在庫管理システム</h3>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="img/medical-shot1.png" class="slide active" alt="在庫一覧とアラート機能">
+                    <img src="img/medical-shot2.png" class="slide" alt="入出庫履歴（監査証跡）">
+                    <img src="img/medical-shot3.png" class="slide" alt="バリデーションエラー画面">
+                </div>
+                <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
+            </div>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <p>お問い合わせはメールにてお願いいたします。</p>
-    <p>Email: kouki11420@icloud.com</p>
-</section>
-</section>
+            <div class="project-detail">
+                <p><strong>【概要】</strong> 医療現場での「正確な在庫管理」と「操作の透明性」を追求した業務管理ツールです。</p>
+                <p><strong>【技術スタック】</strong> Python, Flask, SQLite, Flask-Login, Gunicorn</p>
+                <p><strong>【注力ポイント】</strong> 
+                    単なる数値管理ではなく、医療現場で不可欠な「監査証跡（操作ログ）」の自動記録機能を実装。
+                    「廃棄」や「使用」などの理由に応じて在庫変動を自動計算するロジックや、在庫不足時の動的アラートなど、実務での誤操作防止に徹底的にこだわりました。
+                </p>
+            </div>
+            
+            <div class="project-links">
+                <a href="https://github.com/cielsandciels-blip/medical-inventory" target="_blank" class="link-btn">GitHubでコードを見る</a>
+                <a href="https://medical-inventory-koki.onrender.com" target="_blank" class="link-btn demo-btn">デモサイトを開く</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>Secure AI Gateway（生成AI情報漏洩防止システム）</h3>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="img/gateway1.png" class="slide active" alt="セキュリティ遮断画面">
+                    <img src="img/gateway2.png" class="slide" alt="管理ダッシュボード">
+                    <img src="img/gateway3.png" class="slide" alt="検知ログ詳細">
+                </div>
+                <button class="prev" onclick="moveSlide(-1, this)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1, this)">&#10095;</button>
+            </div>
+
+            <div class="project-detail">
+                <p><strong>【概要】</strong> 企業での生成AI利用における「情報漏洩」を防ぐための、中間プロキシシステムです。社員とAIの間に配置し、送信内容をリアルタイムで検閲します。</p>
+                <p><strong>【技術スタック】</strong> Go (net/http), Vanilla JS, Chart.js, HTML/CSS</p>
+                <p><strong>【注力ポイント】</strong> 
+                    DLP（情報漏洩対策）として、正規表現を用いた「APIキー」「メールアドレス」「個人情報」のパターン検知を実装。
+                    また、Go言語を採用することで、将来的なアクセス増にも耐えうる高速なレスポンスを実現しました。
+                    管理画面ではChart.jsを用い、リスク検知状況をリアルタイムで可視化しています。
+                </p>
+                <p><strong>【現状の課題と展望】</strong>
+                    現在は正規表現によるパターンマッチングを採用しているため、高度な難読化が行われたコードや、文脈依存の機密情報の検知には限界があります。
+                    本質的な解決のためには、今後は「抽象構文木（AST）解析」の導入や、外部ポリシーエンジン（OPA）との連携による動的なルール管理の実装が必要であると考えています。
+                </p>
+            </div>
+            
+            <div class="project-links">
+                <a href="https://github.com/cielsandciels-blip/secure-ai-gateway" target="_blank" class="link-btn">GitHubでコードを見る</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Qualifications</h2>
+        <ul>
+            <li><strong>資格:</strong> ウェブ解析士, 普通自動車第一種運転免許(AT限定)</li>
+            <li><strong>言語/Framework:</strong> Go (Gin), Python (Flask/OR-Tools), JavaScript, HTML5, CSS3</li>
+            <li><strong>AI/DB/Server:</strong> Docker, PostgreSQL, SQLite, Google OR-Tools, Render (CI/CD)</li> 
+            <li><strong>その他スキル:</strong> GA4, Filmora, Capcut, Adobe (Illustrator, Photoshop, XD)</li>
+        </ul>
+    </section>
+
+    <section id="vision">
+        <h2>Vision</h2>
+        <p>ウェブ解析士の視点とエンジニアリングを融合させ、地方ビジネスにDX（デジタルトランスフォーメーション）を。実務未経験ながら、課題発見から実装までを一貫して行う『自走力』が私の強みです。</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>お問い合わせはメールにてお願いいたします。</p>
+        <p>Email: kouki11420@icloud.com</p>
+    </section>
+
     <footer>
         <p>&copy; 2026 KOUKI. All Rights Reserved.</p>
     </footer>
